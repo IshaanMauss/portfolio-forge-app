@@ -1,0 +1,93 @@
+.resume-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #0a192f;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.resume-actions button {
+  background-color: #64ffda;
+  color: #0a192f;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.theme-toggle-wrapper {
+  color: #ccd6f6;
+}
+.resume-container {
+  max-width: 850px;
+  margin: 2rem auto;
+  padding: 3rem;
+  background-color: #fff;
+  color: #333;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Lato', sans-serif;
+}
+.resume-header {
+  text-align: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+.profile-pic-resume {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 4px solid #eee;
+}
+.resume-header h1 { color: #112240; margin: 0;}
+.resume-header .subtitle { font-size: 1.2rem; color: #555; margin-top: 0.2rem; }
+.contact-info { margin-top: 0.5rem; font-size: 0.9rem; color: #555; }
+.contact-info a { color: #007bff; text-decoration: none; }
+.resume-container h2 {
+  color: #112240;
+  border-bottom: 1px solid #64ffda;
+  padding-bottom: 0.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Roboto Slab', serif;
+}
+.skills-list-resume { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; }
+.skills-list-resume li { background-color: #f0f0f0; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.9rem; }
+.project-item-resume, .education-item-resume { margin-bottom: 1rem; }
+.project-item-resume h3, .education-item-resume h3 { margin-bottom: 0.2rem; color: #112240; }
+.resume-container.theme-applied .project-item-resume h3,
+.resume-container.theme-applied .education-item-resume h3 {
+    color: inherit;
+}
+.resume-main { display: flex; gap: 2rem; }
+.main-col-resume { flex: 2; }
+.sidebar-col-resume { flex: 1; }
+.resume-container.layout-compact .resume-main { flex-direction: column; }
+.resume-container.layout-compact .sidebar-col-resume {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+/* --- STYLES FOR PDF EXPORT ONLY --- */
+
+/* When this class is active, it forces a simple, single-column layout */
+.pdf-export .resume-main {
+  display: block;
+}
+
+.pdf-export .main-col-resume,
+.pdf-export .sidebar-col-resume {
+  display: block;
+  width: 100%;
+}
+
+.pdf-export .sidebar-col-resume {
+  break-inside: avoid;
+}

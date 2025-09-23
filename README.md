@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# Portfolio Forge  Forge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Portfolio Forge Dashboard](https://i.imgur.com/your-screenshot-url.png) 
 
-## Available Scripts
+**Portfolio Forge** is a powerful, real-time portfolio builder designed for students and professionals to effortlessly create, manage, and share stunning, professional online portfolios. Built with React and Firebase, it offers a seamless editing experience with a live preview and a host of modern features.
 
-In the project directory, you can run:
+**Live Demo:** [Link to your deployed Netlify site]
 
-### `npm start`
+---
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **Real-Time Editing:** A dual-panel dashboard with a control panel on the left and a live preview on the right that updates instantly as you type.
+* **Secure Authentication:** Safe and easy sign-in using Google Authentication via Firebase.
+* **Persistent Cloud Storage:** All portfolio data is securely saved in a real-time Firestore database.
+* **Dynamic Professional Layout:**
+    * **Customizable Sections:** Edit pre-built sections for your bio, education, projects, and skills.
+    * **Professional Fields:** Add dedicated sections for **Hard Skills**, **Soft Skills**, and **Certifications** to create a comprehensive profile.
+    * **Layout Templates:** Instantly switch between a modern two-column layout or a compact single-column design.
+* **Portfolio Versioning:** Create and manage multiple versions of your portfolio, tailored for different job applications (e.g., "Web Dev Version," "Game Dev Version").
+* **Web Resume & PDF Export:** Automatically generates a clean, shareable web resume from your portfolio data, which can be downloaded as a high-quality, clickable PDF.
+* **File Uploads:** Easily upload a professional profile picture to Firebase Storage.
+* **Modern UI/UX:**
+    * **Toast Notifications:** Sleek, non-intrusive notifications for all actions (e.g., "Save Successful").
+    * **Fully Responsive:** A professional and intuitive design that works flawlessly on all devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
+## 🛠️ Tech Stack
 
-### `npm test`
+* **Frontend:** React, React Router
+* **Backend & Database:** Firebase (Authentication, Firestore, Storage)
+* **PDF Generation:** jsPDF, html2canvas
+* **UI/UX:** React Toastify for notifications, CSS Flexbox & Grid for layouts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
+## 🚀 Getting Started
 
-### `npm run build`
+To get a local copy up and running, follow these simple steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Prerequisites**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Node.js (v14 or later)
+* npm
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Installation & Setup**
 
-### `npm run eject`
+1.  **Clone the repository:**
+    ```sh
+    git clone [https://github.com/your-username/portfolio-forge.git](https://github.com/your-username/portfolio-forge.git)
+    cd portfolio-forge
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2.  **Install NPM packages:**
+    ```sh
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.  **Set up Firebase:**
+    * Create a project on the [Firebase Console](https://console.firebase.google.com/).
+    * Add a new **Web App** to your project.
+    * Copy the `firebaseConfig` object.
+    * Create a file named `.env.local` in the root of your project.
+    * Add your Firebase credentials to the `.env.local` file. The variable names must start with `REACT_APP_`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```env
+    REACT_APP_API_KEY="your-api-key"
+    REACT_APP_AUTH_DOMAIN="your-auth-domain"
+    REACT_APP_PROJECT_ID="your-project-id"
+    REACT_APP_STORAGE_BUCKET="your-storage-bucket"
+    REACT_APP_MESSAGING_SENDER_ID="your-messaging-sender-id"
+    REACT_APP_APP_ID="your-app-id"
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4.  **Update Firebase Config File:**
+    * Open `src/firebase/config.js`.
+    * Replace the placeholder `firebaseConfig` object with your environment variables.
 
-## Learn More
+    ```javascript
+    const firebaseConfig = {
+      apiKey: process.env.REACT_APP_API_KEY,
+      authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+      // ... and so on for all keys
+    };
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5.  **Run the application:**
+    ```sh
+    npm start
+    ```
+    The app will now be running on `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+## ☁️ Deployment
 
-### Code Splitting
+This project is ready to be deployed on services like **Netlify** or **Vercel**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1.  Push your code to a GitHub repository.
+2.  Connect your repository to your Netlify/Vercel account.
+3.  **Important:** Add your Firebase environment variables (the `REACT_APP_...` keys and values) to the "Environment Variables" section in your Netlify/Vercel project settings.
+4.  Click "Deploy."
 
-### Analyzing the Bundle Size
+---
+## 🤖 AI/ML Integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The application is structured to easily accommodate real AI/ML models. The file `src/api/mockEnhanceAPI.js` currently contains placeholder logic. A machine learning engineer can replace the contents of this file with real API calls to a Python backend (or any other service) without needing to modify the React frontend.
 
-### Making a Progressive Web App
+---
+## 👥 Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Forged by **ITV** (Ishaan & Vaibhav).
