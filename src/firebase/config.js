@@ -1,21 +1,20 @@
+// src/firebase/config.js
+
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage"; // <-- ADD THIS IMPORT
-// =================================================================
-// PASTE YOUR COPIED FIREBASE CONFIGURATION OBJECT HERE
-// It should look like this:
-const firebaseConfig = {
-  apiKey: "AIzaSyCnMgq19Pa3l7dHBYQT9rtS3IwAMSod4jE",
-  authDomain: "portfolio-forge-4e0a9.firebaseapp.com",
-  projectId: "portfolio-forge-4e0a9",
-  storageBucket: "portfolio-forge-4e0a9.firebasestorage.app",
-  messagingSenderId: "701512154883",
-  appId: "1:701512154883:web:15128fafeac3068b683336",
-  measurementId: "G-P6FZ0HJHHR"
-};
-// =================================================================
+import { getStorage } from "firebase/storage";
 
+// Your new, secure Firebase configuration object
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -24,4 +23,4 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const db = getFirestore(app);
-export const storage = getStorage(app); // <-- ADD THIS EXPORT
+export const storage = getStorage(app);
